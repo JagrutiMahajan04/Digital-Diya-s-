@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Diwali Diya's</title>
+    <style>
+        .card{
+            width: 300px;
+            height: 380px;
+            border: 5px black dotted;
+            display: block;
+            margin: auto;
+        }
+        .light-img{
+            display: block;
+            margin: auto;
+            height: 180px;
+            padding: 30px;;
+        }
+
+        .btn-container{
+            display: flex;
+            justify-content: space-between;
+            padding:5px;
+            margin-top:50px;
+            height: 30px;
+        }
+        .btn{
+            border: none;
+            border-radius: 20px;
+            border: 0.5px dashed black;
+            cursor: pointer;
+            font-size: 20px;
+            margin: auto;        
+        }
+        .btn-on{
+            background-color: #009933;
+            color:white;
+        }
+        .btn-off{
+            background-color: #ff3333;
+            color:white;
+        }
+        .card-dark{
+            background-color: grey;
+        }
+        .card-light{
+            background-color: rgb(255, 131, 97);
+        }
+    </style>
+    <script>
+        function lightOn(){
+            document.getElementById("light").src = "./images/light-on.png";
+            document.getElementById("btn-on").className = "btn btn-on";
+            document.getElementById("btn-off").className = "btn btn-off";
+            document.querySelector(".card").className ="card card-light";
+        }
+        function lightOff(){
+            document.getElementById("light").src = "./images/light-off.png";
+            document.getElementById("btn-off").className = "btn btn-off";
+            document.getElementById("btn-on").className = "btn btn-on";
+            document.querySelector(".card").className = "card card-dark";
+        }
+    </script>
+    
+    
+</head>
+<body>
+    <div class="card">
+        <img src="./images/light-off.png" class="light-img" id="light"/>
+        <div class="btn-container">
+            <button class="btn btn-on" id="btn-on"onclick="lightOn()">ON</button>
+            <button class="btn btn-off" id="btn-off" onclick="lightOff()">OFF</button>
+        </div>
+    </div>
+    
+</body>
+</html>
